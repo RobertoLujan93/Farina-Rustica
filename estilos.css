@@ -174,6 +174,11 @@ nav a:hover::after{
     justify-content: space-evenly;
 }
 
+.nosotros__card__container .card {
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
 .card-text {
     font-size: 1.5rem;
 }
@@ -265,7 +270,6 @@ nav a:hover::after{
     .contenedor__gris__nosotros__caja {
         display: flex;
         flex-direction: column;
-        font-size: 100%;
     }
         .contenedor__gris__nosotros__caja__texto {
             margin-top: 15px;
@@ -304,7 +308,8 @@ nav a:hover::after{
                 font-size: 1.15rem;
             }
         .contenedor__gris__inicio__caja__imagen img {
-            width: 90%
+            width: 90%;
+            height: auto;
         }
     .section__2__inicio__caja__button {
         padding: 06px 19px;
@@ -333,7 +338,8 @@ nav a:hover::after{
                 font-size: 1.15rem;
             }
         .contenedor__gris__nosotros__caja__imagen img {
-            width: 90%
+            width: 90%;
+            height: auto;
         }
     /* End Nosotros */
 }
@@ -363,7 +369,8 @@ nav a:hover::after{
                 font-size: 1.20rem;
             }
         .contenedor__gris__inicio__caja__imagen img {
-            width: 90%
+            width: 90%;
+            height: auto;
         }
     .section__2__inicio__caja__button {
         padding: 08px 23px;
@@ -392,7 +399,8 @@ nav a:hover::after{
                 font-size: 1.20rem;
             }
         .contenedor__gris__nosotros__caja__imagen img {
-            width: 90%
+            width: 90%;
+            height: auto;
         }
     /* End Nosotros */
 }
@@ -480,13 +488,11 @@ nav a:hover::after{
             padding: 10px 27px;
         }
     .contenedor__gris__inicio__caja__imagen img {
-        width: 90%
+        width: 90%;
+        height: auto;
     }
     /* End Inicio */
     /* Start Nosotros */
-    .nosotros__card__container .card {
-        margin-right: 30px;
-    }
     .contenedor__gris__nosotros__caja {
         display: flex;
         flex-direction: column;
@@ -501,15 +507,9 @@ nav a:hover::after{
                 font-size: 1.7rem;
             }
         .contenedor__gris__nosotros__caja__imagen img {
-            width: 90%
+            width: 90%;
+            height: auto;
         }
     /* End Nosotros */
 }
 /* End Extra Large Devices */
-
-/* Media Extra Pagina Nosotros */
-@media screen and (min-width: 1200px) and (max-width: 1545px) {
-    .nosotros__card__container .card {
-        margin-right: 30px;
-    }
-}
