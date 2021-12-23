@@ -229,13 +229,14 @@ nav a:hover::after {
 }
 /* End Estilos Nosotros */
 
-/* Start Estilos Footer */
+/* Start Estilos Footer Contacto */
 .contacto__footer {
-  position: fixed;
+  position: relative;
   left: 0;
   bottom: 0;
   width: 100%;
 }
+/*End Estilos Footer Contacto */
 
 /*  Start Media Queries */
 /*  Start Extra Small Devices */
