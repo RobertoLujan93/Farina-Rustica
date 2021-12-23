@@ -267,6 +267,10 @@ nav a:hover::after {
     padding: 04px 15px;
     font-size: 1.1rem;
   }
+  .contenedor__gris__inicio__caja__imagen img {
+    width: 90%;
+    height: auto;
+  }
   /* End Inicio */
   /* Start Nosotros */
   .nosotros__card__container {
@@ -288,6 +292,10 @@ nav a:hover::after {
   }
   .contenedor__gris__nosotros__caja__texto__paragraph {
     font-size: 1.1rem;
+  }
+  .contenedor__gris__nosotros__caja__imagen img {
+    width: 90%;
+    height: auto;
   }
   /* End Nosotros */
 }
