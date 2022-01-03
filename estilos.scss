@@ -1,4 +1,28 @@
-/* Estilos Iniciales */
+/* Start Variables */
+$colores-caja: (
+  "negro": #201f1f,
+  "gris": #eeeeee,
+);
+
+@mixin contenedor-gris {
+  background-color: map-get($colores-caja, gris);
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+
+@mixin flex-space {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* End Variables */
+/*  Start Estilos Iniciales */
 * {
   padding: 0;
   margin: 0;
@@ -14,9 +38,7 @@ main {
 }
 
 .container-bg {
-  background-color: #eeeeee;
-  margin-top: 35px;
-  margin-bottom: 35px;
+  @include contenedor-gris;
 }
 
 .col {
@@ -27,7 +49,7 @@ main {
 
 /*Start Estilos NavBar*/
 nav {
-  background-color: #201f1f;
+  background-color: map-get($colores-caja, negro);
 }
 
 /*Start Animation NavBar*/
@@ -72,20 +94,17 @@ nav ul li a {
 
 /*Start Estilos Inicio*/
 .contenedor__gris__inicio {
-  background-color: #eeeeee;
-  margin-top: 35px;
-  margin-bottom: 35px;
+  @include contenedor-gris;
   &__caja {
+    @include flex-space;
     padding: 15px;
-    display: flex;
-    justify-content: space-evenly;
     width: 100%;
     height: auto;
-    align-items: center;
     &__texto {
       display: flex;
       flex-direction: column;
       align-items: center;
+      width: 100%;
       &__title {
         font-size: 3rem;
       }
@@ -95,9 +114,9 @@ nav ul li a {
         margin-bottom: 20px;
       }
       &__button {
-        background-color: #201f1f;
+        background-color: map-get($colores-caja, negro);
         color: white;
-        border: 2px solid #201f1f;
+        border: 2px solid map-get($colores-caja, negro);
         padding: 15px 32px;
         text-align: center;
         text-decoration: none;
@@ -109,17 +128,15 @@ nav ul li a {
         &:hover {
           background-color: white;
           border: none;
-          color: #201f1f;
-          border: 2px solid #201f1f;
+          color: map-get($colores-caja, negro);
+          border: 2px solid map-get($colores-caja, negro);
         }
       }
     }
     &__imagen {
-      display: flex;
+      @include flex-center;
       width: 100%;
       height: auto;
-      justify-content: center;
-      align-items: center;
       & img {
         height: fit-content;
         border-radius: 20px;
@@ -130,13 +147,12 @@ nav ul li a {
 }
 
 .section__2__inicio__caja {
-  display: flex;
-  justify-content: center;
+  @include flex-center;
   margin-bottom: 35px;
   &__button {
-    background-color: #201f1f;
+    background-color: map-get($colores-caja, negro);
     color: white;
-    border: 2px solid #201f1f;
+    border: 2px solid map-get($colores-caja, negro);
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -150,8 +166,8 @@ nav ul li a {
     &:hover {
       background-color: white;
       border: none;
-      color: #201f1f;
-      border: 2px solid #201f1f;
+      color: map-get($colores-caja, negro);
+      border: 2px solid map-get($colores-caja, negro);
     }
   }
 }
@@ -173,20 +189,17 @@ nav ul li a {
 }
 
 .contenedor__gris__nosotros {
-  background-color: #eeeeee;
-  margin-top: 35px;
-  margin-bottom: 35px;
+  @include contenedor-gris;
   &__caja {
+    @include flex-space;
     padding: 15px;
-    display: flex;
-    justify-content: space-evenly;
     width: 100%;
     height: auto;
-    align-items: center;
     &__texto {
       display: flex;
       flex-direction: column;
       align-items: center;
+      width: 100%;
       &__title {
         font-size: 3rem;
       }
@@ -197,14 +210,11 @@ nav ul li a {
       }
     }
     &__imagen {
-      display: flex;
+      @include flex-center;
       width: 100%;
       height: auto;
-      justify-content: center;
-      align-items: center;
       & img {
         height: fit-content;
-        border-radius: 20px;
         width: 95%;
       }
     }
@@ -212,14 +222,32 @@ nav ul li a {
 }
 /* End Estilos Nosotros */
 
-/* Start Estilos Footer Contacto */
+/* Start Estilos Contacto */
+.contenedor__gris__contacto {
+  @extend .contenedor__gris__inicio;
+  display: flex;
+  align-items: center;
+  position: relative;
+  min-height: 80vh;
+  &__caja {
+    @extend .contenedor__gris__inicio__caja;
+    &__imagen {
+      @extend .contenedor__gris__inicio__caja__imagen;
+      & img {
+        height: fit-content;
+        width: 95%;
+      }
+    }
+  }
+}
+
 .contacto__footer {
   position: relative;
   left: 0;
   bottom: 0;
   width: 100%;
 }
-/*End Estilos Footer Contacto */
+/*End Estilos Contacto */
 
 /*  Start Media Queries */
 /*  Start Extra Small Devices */
@@ -422,7 +450,7 @@ nav ul li a {
         margin-top: 15px;
       }
       &__paragraph {
-        font-size: 1.25rem;
+        font-size: 1.7rem;
       }
       &__button {
         padding: 10px 27px;
@@ -471,7 +499,7 @@ nav ul li a {
   #carouselExampleIndicators .carousel-item img {
     height: 35rem;
   }
-  .contenedor__gris__incio__caja__texto {
+  .contenedor__gris__inicio__caja__texto {
     margin-top: 15px;
     &__title {
       font-size: 2.5rem;
