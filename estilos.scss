@@ -146,30 +146,46 @@ nav ul li a {
   }
 }
 
-.section__2__inicio__caja {
-  @include flex-center;
+.section__2__inicio__contenedor {
+  margin-top: 35px;
   margin-bottom: 35px;
+  &__title {
+    @include flex-center;
+    margin-bottom: 25px;
+  }
+  &__cards {
+    display: flex;
+    justify-content: space-evenly;
+  }
   &__button {
-    background-color: map-get($colores-caja, negro);
-    color: white;
-    border: 2px solid map-get($colores-caja, negro);
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    text-transform: uppercase;
-    font-size: 1.5rem;
-    border-radius: 8px;
-    transition-duration: 0.4s;
-    margin-top: 25px;
-    margin-bottom: 15px;
-    &:hover {
-      background-color: white;
-      border: none;
-      color: map-get($colores-caja, negro);
+    @include flex-center;
+    &__btn {
+      background-color: map-get($colores-caja, negro);
+      color: white;
       border: 2px solid map-get($colores-caja, negro);
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      border-radius: 8px;
+      transition-duration: 0.4s;
+      margin-top: 15px;
+      margin-bottom: 15px;
+      &:hover {
+        background-color: white;
+        border: none;
+        color: map-get($colores-caja, negro);
+        border: 2px solid map-get($colores-caja, negro);
+      }
     }
   }
+}
+
+.section__2__inicio__contenedor__cards .card {
+  margin-right: 30px;
+  margin-left: 30px;
 }
 /*End Estilos Inicio*/
 
@@ -222,6 +238,15 @@ nav ul li a {
 }
 /* End Estilos Nosotros */
 
+/* Start Estilos Productos */
+.productos__card__container {
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 1rem;
+  margin-bottom: 35px;
+}
+/* End Estilos Productos */
+
 /* Start Estilos Contacto */
 .contenedor__gris__contacto {
   @extend .contenedor__gris__inicio;
@@ -263,7 +288,7 @@ nav ul li a {
     &__texto {
       margin-top: 15px;
       &__title {
-        font-size: 1.25rem;
+        font-size: 1.5rem;
       }
       &__paragraph {
         font-size: 1.1rem;
@@ -274,11 +299,19 @@ nav ul li a {
       }
     }
     &__imagen img {
-      width: 90%;
+      width: 75%;
       height: auto;
     }
   }
-  .section__2__inicio__caja__button {
+  .section__2__inicio__contenedor__cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .section__2__inicio__contenedor__cards .card {
+    margin-bottom: 30px;
+    width: 65%;
+  }
+  .section__2__inicio__contenedor__button__btn {
     padding: 04px 15px;
     font-size: 1.1rem;
   }
@@ -287,9 +320,14 @@ nav ul li a {
   .nosotros__card__container {
     flex-direction: column;
     align-items: center;
+    &__texto {
+      font-size: 1.25rem;
+    }
   }
   .nosotros__card__container .card {
     margin-bottom: 50px;
+    width: 80%;
+    font-size: 1.25rem;
   }
   .contenedor__gris__nosotros__caja {
     display: flex;
@@ -297,14 +335,14 @@ nav ul li a {
     &__texto {
       margin-top: 15px;
       &__title {
-        font-size: 1.25rem;
+        font-size: 1.5rem;
       }
       &__paragraph {
-        font-size: 1.1rem;
+        font-size: 1.25rem;
       }
     }
     &__imagen img {
-      width: 90%;
+      width: 95%;
       height: auto;
     }
   }
@@ -335,11 +373,19 @@ nav ul li a {
       }
     }
     &__imagen img {
-      width: 90%;
+      width: 70%;
       height: auto;
     }
   }
-  .section__2__inicio__caja__button {
+  .section__2__inicio__contenedor__cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .section__2__inicio__contenedor__cards .card {
+    margin-bottom: 30px;
+    width: 60%;
+  }
+  .section__2__inicio__contenedor__button__btn {
     padding: 06px 19px;
     font-size: 1.15rem;
   }
@@ -348,9 +394,14 @@ nav ul li a {
   .nosotros__card__container {
     flex-direction: column;
     align-items: center;
+    &__texto {
+      font-size: 1.35rem;
+    }
   }
+
   .nosotros__card__container .card {
     margin-bottom: 50px;
+    width: 80%;
   }
   .contenedor__gris__nosotros__caja {
     display: flex;
@@ -358,10 +409,10 @@ nav ul li a {
     &__texto {
       margin-top: 15px;
       &__title {
-        font-size: 1.5rem;
+        font-size: 1.75rem;
       }
       &__paragraph {
-        font-size: 1.15rem;
+        font-size: 1.35rem;
       }
     }
     &__imagen img {
@@ -396,11 +447,19 @@ nav ul li a {
       }
     }
     &__imagen img {
-      width: 90%;
+      width: 65%;
       height: auto;
     }
   }
-  .section__2__inicio__caja__button {
+  .section__2__inicio__contenedor__cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .section__2__inicio__contenedor__cards .card {
+    margin-bottom: 30px;
+    width: 60%;
+  }
+  .section__2__inicio__contenedor__button__btn {
     padding: 08px 23px;
     font-size: 1.2rem;
   }
@@ -412,6 +471,7 @@ nav ul li a {
   }
   .nosotros__card__container .card {
     margin-bottom: 50px;
+    width: 75%;
   }
   .contenedor__gris__nosotros__caja {
     display: flex;
@@ -419,10 +479,10 @@ nav ul li a {
     &__texto {
       margin-top: 15px;
       &__title {
-        font-size: 1.75rem;
+        font-size: 2rem;
       }
       &__paragraph {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
       }
     }
     &__imagen img {
@@ -458,18 +518,34 @@ nav ul li a {
       }
     }
     &__imagen img {
-      width: 90%;
+      width: 60%;
       height: auto;
     }
   }
-  .section__2__inicio__caja__button {
+  .section__2__inicio__contenedor__cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .section__2__inicio__contenedor__cards .card {
+    margin-bottom: 30px;
+    width: 55%;
+  }
+  .section__2__inicio__contenedor__button__btn {
     padding: 10px 27px;
     font-size: 1.25rem;
   }
   /* End Inicio */
   /* Start Nosotros */
+  .nosotros__card__container {
+    flex-direction: column;
+    align-items: center;
+  }
   .nosotros__card__container .card {
     margin-bottom: 50px;
+    width: 75%;
+  }
+  .nosotros__card__container__texto {
+    font-size: 1.65rem;
   }
   .contenedor__gris__nosotros__caja {
     display: flex;
@@ -481,11 +557,11 @@ nav ul li a {
         margin-top: 15px;
       }
       &__paragraph {
-        font-size: 1.25rem;
+        font-size: 1.65rem;
       }
     }
     &__imagen img {
-      width: 90%;
+      width: 75%;
       height: auto;
     }
   }
@@ -531,10 +607,50 @@ nav ul li a {
     }
   }
   .contenedor__gris__nosotros__caja__imagen img {
-    width: 90%;
+    width: 80%;
     height: auto;
   }
   /* End Nosotros */
 }
 /* End Extra Large Devices */
+
+/* Start Medias Productos */
+@media screen and (max-width: 576px) {
+  .productos__card__container {
+    grid-template-columns: repeat(1, 1fr);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    &__card {
+      width: 70%;
+    }
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .productos__card__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .productos__card__container {
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  .productos__card__container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .productos__card__container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+/*End Medias Productos */
 /* End Media Queries */

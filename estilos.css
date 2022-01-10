@@ -173,7 +173,12 @@ nav ul li a:hover::after {
   width: 95%;
 }
 
-.section__2__inicio__caja {
+.section__2__inicio__contenedor {
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+
+.section__2__inicio__contenedor__title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -183,10 +188,31 @@ nav ul li a:hover::after {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 35px;
+  margin-bottom: 25px;
 }
 
-.section__2__inicio__caja__button {
+.section__2__inicio__contenedor__cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.section__2__inicio__contenedor__button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.section__2__inicio__contenedor__button__btn {
   background-color: #201f1f;
   color: white;
   border: 2px solid #201f1f;
@@ -199,15 +225,20 @@ nav ul li a:hover::after {
   border-radius: 8px;
   -webkit-transition-duration: 0.4s;
           transition-duration: 0.4s;
-  margin-top: 25px;
+  margin-top: 15px;
   margin-bottom: 15px;
 }
 
-.section__2__inicio__caja__button:hover {
+.section__2__inicio__contenedor__button__btn:hover {
   background-color: white;
   border: none;
   color: #201f1f;
   border: 2px solid #201f1f;
+}
+
+.section__2__inicio__contenedor__cards .card {
+  margin-right: 30px;
+  margin-left: 30px;
 }
 
 /*End Estilos Inicio*/
@@ -297,6 +328,16 @@ nav ul li a:hover::after {
 }
 
 /* End Estilos Nosotros */
+/* Start Estilos Productos */
+.productos__card__container {
+  margin: 0 auto;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 1rem;
+  margin-bottom: 35px;
+}
+
+/* End Estilos Productos */
 /* Start Estilos Contacto */
 .contenedor__gris__contacto {
   display: -webkit-box;
@@ -345,7 +386,7 @@ nav ul li a:hover::after {
     margin-top: 15px;
   }
   .contenedor__gris__inicio__caja__texto__title {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
   }
   .contenedor__gris__inicio__caja__texto__paragraph {
     font-size: 1.1rem;
@@ -355,10 +396,23 @@ nav ul li a:hover::after {
     font-size: 1.1rem;
   }
   .contenedor__gris__inicio__caja__imagen img, .contenedor__gris__contacto__caja__imagen img {
-    width: 90%;
+    width: 75%;
     height: auto;
   }
-  .section__2__inicio__caja__button {
+  .section__2__inicio__contenedor__cards {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .section__2__inicio__contenedor__cards .card {
+    margin-bottom: 30px;
+    width: 65%;
+  }
+  .section__2__inicio__contenedor__button__btn {
     padding: 04px 15px;
     font-size: 1.1rem;
   }
@@ -373,8 +427,13 @@ nav ul li a:hover::after {
         -ms-flex-align: center;
             align-items: center;
   }
+  .nosotros__card__container__texto {
+    font-size: 1.25rem;
+  }
   .nosotros__card__container .card {
     margin-bottom: 50px;
+    width: 80%;
+    font-size: 1.25rem;
   }
   .contenedor__gris__nosotros__caja {
     display: -webkit-box;
@@ -389,13 +448,13 @@ nav ul li a:hover::after {
     margin-top: 15px;
   }
   .contenedor__gris__nosotros__caja__texto__title {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
   }
   .contenedor__gris__nosotros__caja__texto__paragraph {
-    font-size: 1.1rem;
+    font-size: 1.25rem;
   }
   .contenedor__gris__nosotros__caja__imagen img {
-    width: 90%;
+    width: 95%;
     height: auto;
   }
   /* End Nosotros */
@@ -431,10 +490,23 @@ nav ul li a:hover::after {
     font-size: 1.15rem;
   }
   .contenedor__gris__inicio__caja__imagen img, .contenedor__gris__contacto__caja__imagen img {
-    width: 90%;
+    width: 70%;
     height: auto;
   }
-  .section__2__inicio__caja__button {
+  .section__2__inicio__contenedor__cards {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .section__2__inicio__contenedor__cards .card {
+    margin-bottom: 30px;
+    width: 60%;
+  }
+  .section__2__inicio__contenedor__button__btn {
     padding: 06px 19px;
     font-size: 1.15rem;
   }
@@ -449,8 +521,12 @@ nav ul li a:hover::after {
         -ms-flex-align: center;
             align-items: center;
   }
+  .nosotros__card__container__texto {
+    font-size: 1.35rem;
+  }
   .nosotros__card__container .card {
     margin-bottom: 50px;
+    width: 80%;
   }
   .contenedor__gris__nosotros__caja {
     display: -webkit-box;
@@ -465,10 +541,10 @@ nav ul li a:hover::after {
     margin-top: 15px;
   }
   .contenedor__gris__nosotros__caja__texto__title {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
   }
   .contenedor__gris__nosotros__caja__texto__paragraph {
-    font-size: 1.15rem;
+    font-size: 1.35rem;
   }
   .contenedor__gris__nosotros__caja__imagen img {
     width: 90%;
@@ -507,10 +583,23 @@ nav ul li a:hover::after {
     font-size: 1.2rem;
   }
   .contenedor__gris__inicio__caja__imagen img, .contenedor__gris__contacto__caja__imagen img {
-    width: 90%;
+    width: 65%;
     height: auto;
   }
-  .section__2__inicio__caja__button {
+  .section__2__inicio__contenedor__cards {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .section__2__inicio__contenedor__cards .card {
+    margin-bottom: 30px;
+    width: 60%;
+  }
+  .section__2__inicio__contenedor__button__btn {
     padding: 08px 23px;
     font-size: 1.2rem;
   }
@@ -527,6 +616,7 @@ nav ul li a:hover::after {
   }
   .nosotros__card__container .card {
     margin-bottom: 50px;
+    width: 75%;
   }
   .contenedor__gris__nosotros__caja {
     display: -webkit-box;
@@ -541,10 +631,10 @@ nav ul li a:hover::after {
     margin-top: 15px;
   }
   .contenedor__gris__nosotros__caja__texto__title {
-    font-size: 1.75rem;
+    font-size: 2rem;
   }
   .contenedor__gris__nosotros__caja__texto__paragraph {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
   .contenedor__gris__nosotros__caja__imagen img {
     width: 90%;
@@ -584,17 +674,43 @@ nav ul li a:hover::after {
     font-size: 1.25rem;
   }
   .contenedor__gris__inicio__caja__imagen img, .contenedor__gris__contacto__caja__imagen img {
-    width: 90%;
+    width: 60%;
     height: auto;
   }
-  .section__2__inicio__caja__button {
+  .section__2__inicio__contenedor__cards {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .section__2__inicio__contenedor__cards .card {
+    margin-bottom: 30px;
+    width: 55%;
+  }
+  .section__2__inicio__contenedor__button__btn {
     padding: 10px 27px;
     font-size: 1.25rem;
   }
   /* End Inicio */
   /* Start Nosotros */
+  .nosotros__card__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
   .nosotros__card__container .card {
     margin-bottom: 50px;
+    width: 75%;
+  }
+  .nosotros__card__container__texto {
+    font-size: 1.65rem;
   }
   .contenedor__gris__nosotros__caja {
     display: -webkit-box;
@@ -613,10 +729,10 @@ nav ul li a:hover::after {
     margin-top: 15px;
   }
   .contenedor__gris__nosotros__caja__texto__paragraph {
-    font-size: 1.25rem;
+    font-size: 1.65rem;
   }
   .contenedor__gris__nosotros__caja__imagen img {
-    width: 90%;
+    width: 75%;
     height: auto;
   }
   /* End Nosotros */
@@ -666,12 +782,62 @@ nav ul li a:hover::after {
     font-size: 1.7rem;
   }
   .contenedor__gris__nosotros__caja__imagen img {
-    width: 90%;
+    width: 80%;
     height: auto;
   }
   /* End Nosotros */
 }
 
 /* End Extra Large Devices */
+/* Start Medias Productos */
+@media screen and (max-width: 576px) {
+  .productos__card__container {
+    -ms-grid-columns: (1fr)(1);
+        grid-template-columns: repeat(1, 1fr);
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .productos__card__container__card {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .productos__card__container {
+    -ms-grid-columns: (1fr)(2);
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .productos__card__container {
+    -ms-grid-columns: (1fr)(2);
+        grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  .productos__card__container {
+    -ms-grid-columns: (1fr)(4);
+        grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .productos__card__container {
+    -ms-grid-columns: (1fr)(4);
+        grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/*End Medias Productos */
 /* End Media Queries */
 /*# sourceMappingURL=estilos.css.map */
