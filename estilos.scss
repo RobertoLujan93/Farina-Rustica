@@ -45,6 +45,9 @@ main {
   margin-top: 15px;
   margin-bottom: 15px;
 }
+.card-body {
+  background-color: map-get($colores-caja, gris);
+}
 /* End Estilos Iniciales */
 
 /*Start Estilos NavBar*/
@@ -88,7 +91,7 @@ nav ul li a {
 }
 
 #carouselExampleIndicators .carousel-item img {
-  height: 45rem;
+  height: 50rem;
 }
 /*End Estilos Carousel*/
 
@@ -187,6 +190,32 @@ nav ul li a {
   margin-right: 30px;
   margin-left: 30px;
 }
+
+.animate-charcter {
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 4s linear infinite;
+  display: inline-block;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
 /*End Estilos Inicio*/
 
 /* Start Estilos Nosotros */
@@ -246,6 +275,37 @@ nav ul li a {
   margin-bottom: 35px;
 }
 /* End Estilos Productos */
+
+/* Start Estilos Servicios */
+.servicios__card__container__1 {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  align-items: stretch;
+  &__card {
+    margin-right: 30px;
+    margin-left: 30px;
+    width: 37%;
+    &__title {
+      font-weight: bold;
+      margin-bottom: 15px;
+      margin-top: 10px;
+    }
+  }
+}
+
+.servicios__card__container__2 {
+  @extend .servicios__card__container__1;
+  &__card {
+    @extend .servicios__card__container__1__card;
+    &__title {
+      @extend .servicios__card__container__1__card__title;
+    }
+    &__text {
+      @extend .servicios__card__container__1__card__text;
+    }
+  }
+}
 
 /* Start Estilos Contacto */
 .contenedor__gris__contacto {
@@ -347,6 +407,23 @@ nav ul li a {
     }
   }
   /* End Nosotros */
+  /* Start Servicios */
+  .servicios__card__container__1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__card {
+      margin-bottom: 50px;
+      width: 80%;
+      &__title {
+        font-size: 1.5rem;
+      }
+      &__text {
+        font-size: 1.25rem;
+      }
+    }
+  }
+  /* End Servicios */
 }
 /*  End Extra Small Devices */
 
@@ -421,6 +498,23 @@ nav ul li a {
     }
   }
   /* End Nosotros */
+  /* Start Servicios */
+  .servicios__card__container__1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__card {
+      margin-bottom: 50px;
+      width: 80%;
+      &__title {
+        font-size: 1.5rem;
+      }
+      &__text {
+        font-size: 1.25rem;
+      }
+    }
+  }
+  /* End Servicios */
 }
 /* End Small Devices */
 
@@ -491,6 +585,23 @@ nav ul li a {
     }
   }
   /* End Nosotros */
+  /* Start Servicios */
+  .servicios__card__container__1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__card {
+      margin-bottom: 50px;
+      width: 75%;
+      &__title {
+        font-size: 1.65rem;
+      }
+      &__text {
+        font-size: 1.4rem;
+      }
+    }
+  }
+  /* End Servicios */
 }
 /* End Medium Devices */
 
@@ -566,6 +677,22 @@ nav ul li a {
     }
   }
   /* End Nosotros */
+  /* Start Servicios */
+  .servicios__card__container__1 {
+    display: flex;
+    align-items: center;
+    align-items: stretch;
+    &__card {
+      width: 75%;
+      &__title {
+        font-size: 1.75rem;
+      }
+      &__text {
+        font-size: 1.55rem;
+      }
+    }
+  }
+  /* End Servicios */
 }
 /* End Large Devices */
 
@@ -653,4 +780,12 @@ nav ul li a {
   }
 }
 /*End Medias Productos */
+
+/* Media Especial Servicios */
+@media screen and (min-width: 992px) {
+  .servicios__card__container__2 {
+    margin-top: 35px;
+    margin-bottom: 35px;
+  }
+}
 /* End Media Queries */
