@@ -82,8 +82,8 @@ nav ul li a:hover::after {
   margin-top: -34px;
 }
 
-#carouselExampleIndicators .carousel-item img {
-  height: 50rem;
+.carousel-inner {
+  width: 100%;
 }
 
 /*End Estilos Carousel*/
@@ -193,6 +193,7 @@ nav ul li a:hover::after {
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 25px;
+  padding: 30px;
 }
 
 .section__2__inicio__contenedor__cards {
@@ -368,6 +369,11 @@ nav ul li a:hover::after {
   margin-bottom: 35px;
 }
 
+.productos__card__container .card {
+  margin-left: 25px;
+  margin-right: 20px;
+}
+
 /* End Estilos Productos */
 /* Start Estilos Servicios */
 .servicios__card__container__1, .servicios__card__container__2 {
@@ -428,9 +434,6 @@ nav ul li a:hover::after {
 /*  Start Extra Small Devices */
 @media screen and (max-width: 576px) {
   /* Start Inicio */
-  #carouselExampleIndicators .carousel-item img {
-    height: 30rem;
-  }
   .contenedor__gris__inicio__caja, .contenedor__gris__contacto__caja {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -446,9 +449,10 @@ nav ul li a:hover::after {
   }
   .contenedor__gris__inicio__caja__texto__title {
     font-size: 1.5rem;
+    margin-top: 15px;
   }
   .contenedor__gris__inicio__caja__texto__paragraph {
-    font-size: 1.1rem;
+    font-size: 1.25rem;
   }
   .contenedor__gris__inicio__caja__texto__button {
     padding: 04px 15px;
@@ -547,9 +551,6 @@ nav ul li a:hover::after {
 /* Start Small Devices */
 @media screen and (min-width: 576px) and (max-width: 768px) {
   /* Start Inicio */
-  #carouselExampleIndicators .carousel-item img {
-    height: 30rem;
-  }
   .contenedor__gris__inicio__caja, .contenedor__gris__contacto__caja {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -563,10 +564,11 @@ nav ul li a:hover::after {
     margin-top: 15px;
   }
   .contenedor__gris__inicio__caja__texto__title {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
+    margin-top: 15px;
   }
   .contenedor__gris__inicio__caja__texto__paragraph {
-    font-size: 1.15rem;
+    font-size: 1.3rem;
   }
   .contenedor__gris__inicio__caja__texto__button {
     padding: 06px 19px;
@@ -664,9 +666,6 @@ nav ul li a:hover::after {
 /* Start Medium Devices */
 @media screen and (min-width: 768px) and (max-width: 992px) {
   /* Start Inicio */
-  #carouselExampleIndicators .carousel-item img {
-    height: 30rem;
-  }
   .contenedor__gris__inicio__caja, .contenedor__gris__contacto__caja {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -680,10 +679,11 @@ nav ul li a:hover::after {
     margin-top: 15px;
   }
   .contenedor__gris__inicio__caja__texto__title {
-    font-size: 1.75rem;
+    font-size: 2rem;
+    margin-top: 15px;
   }
   .contenedor__gris__inicio__caja__texto__paragraph {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
   .contenedor__gris__inicio__caja__texto__button {
     padding: 08px 23px;
@@ -778,9 +778,6 @@ nav ul li a:hover::after {
 /* Start Large Devices */
 @media screen and (min-width: 992px) and (max-width: 1200px) {
   /* Start Inicio */
-  #carouselExampleIndicators .carousel-item img {
-    height: 35rem;
-  }
   .contenedor__gris__inicio__caja, .contenedor__gris__contacto__caja {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -895,9 +892,6 @@ nav ul li a:hover::after {
 /* Start Extra Large Devices */
 @media screen and (min-width: 1200px) and (max-width: 1400px) {
   /* Start Inicio */
-  #carouselExampleIndicators .carousel-item img {
-    height: 35rem;
-  }
   .contenedor__gris__inicio__caja__texto {
     margin-top: 15px;
   }
@@ -945,7 +939,7 @@ nav ul li a:hover::after {
 /* Start Medias Productos */
 @media screen and (max-width: 576px) {
   .productos__card__container {
-    -ms-grid-columns: (1fr)(1);
+    -ms-grid-columns: (1fr)[1];
         grid-template-columns: repeat(1, 1fr);
     width: 100%;
     display: -webkit-box;
@@ -964,14 +958,14 @@ nav ul li a:hover::after {
 
 @media screen and (min-width: 576px) and (max-width: 768px) {
   .productos__card__container {
-    -ms-grid-columns: (1fr)(2);
+    -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 992px) {
   .productos__card__container {
-    -ms-grid-columns: (1fr)(2);
+    -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
     width: 100%;
   }
@@ -979,14 +973,14 @@ nav ul li a:hover::after {
 
 @media screen and (min-width: 992px) and (max-width: 1200px) {
   .productos__card__container {
-    -ms-grid-columns: (1fr)(4);
+    -ms-grid-columns: (1fr)[4];
         grid-template-columns: repeat(4, 1fr);
   }
 }
 
 @media screen and (min-width: 1200px) {
   .productos__card__container {
-    -ms-grid-columns: (1fr)(4);
+    -ms-grid-columns: (1fr)[4];
         grid-template-columns: repeat(4, 1fr);
   }
 }
