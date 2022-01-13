@@ -322,6 +322,11 @@ nav ul li a {
   min-height: 80vh;
   &__caja {
     @extend .contenedor__gris__inicio__caja;
+    &__title {
+      @include flex-space;
+      padding: 30px;
+      margin-top: -40px;
+    }
     &__imagen {
       @extend .contenedor__gris__inicio__caja__imagen;
       & img {

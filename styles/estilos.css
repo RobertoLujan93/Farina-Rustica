@@ -415,6 +415,20 @@ nav ul li a:hover::after {
   min-height: 80vh;
 }
 
+.contenedor__gris__contacto__caja__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 30px;
+  margin-top: -40px;
+}
+
 .contenedor__gris__contacto__caja__imagen img {
   height: -webkit-fit-content;
   height: -moz-fit-content;
