@@ -193,7 +193,7 @@ nav ul li a:hover::after {
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 25px;
-  padding: 30px;
+  padding: 25px;
 }
 
 .section__2__inicio__contenedor__cards {
