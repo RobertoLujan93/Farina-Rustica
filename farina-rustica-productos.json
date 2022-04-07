@@ -1,0 +1,60 @@
+{
+    "panes": [
+        {
+            "id": "1",
+            "nombre": "Conchita",
+            "precio": "12.99",
+            "imgSrc": "../imagenes/imagenes-productos/imagen-productos-1.jpg"
+            
+        },
+        {
+            "id": "2",
+            "nombre": "Croissant",
+            "precio": "13.99",
+            "imgSrc": "../imagenes/imagenes-productos/imagen-productos-2.jpg"
+            
+        },
+        {
+            "id": "3",
+            "nombre": "Pan de Muerto",
+            "precio": "13.99",
+            "imgSrc": "../imagenes/imagenes-productos/imagen-productos-3.jpg"
+            
+        },
+        {
+            "id": "4",
+            "nombre": "Baguette",
+            "precio": "23.99",
+            "imgSrc": "../imagenes/imagenes-productos/imagen-productos-4.jpg"
+            
+        },
+        {
+            "id": "5",
+            "nombre": "Focaccia",
+            "precio": "17.99",
+            "imgSrc": "../imagenes/imagenes-productos/imagen-productos-5.jpg"
+            
+        },
+        {
+            "id": "6",
+            "nombre": "Bolitas de Arándano",
+            "precio": "5.99",
+            "imgSrc": "../imagenes/imagenes-productos/imagen-productos-6.jpg"
+            
+        },
+        {
+            "id": "7",
+            "nombre": "Fruit Cake",
+            "precio": "14.99",
+            "imgSrc": "../imagenes/imagenes-productos/imagen-productos-7.jpg"
+            
+        },
+        {
+            "id": "8",
+            "nombre": "Chispa de Chocolate",
+            "precio": "5.99",
+            "imgSrc": "../imagenes/imagenes-productos/imagen-productos-8.jpg"
+            
+        }
+    ]
+}

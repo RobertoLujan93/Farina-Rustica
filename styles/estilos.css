@@ -76,6 +76,37 @@ nav ul li a:hover::after {
   width: 50px;
 }
 
+.carrito-btn1 {
+  position: relative;
+  color: white;
+  cursor: pointer;
+  margin-right: 30px;
+  bottom: -8px;
+  font-size: 1.75rem;
+}
+
+#carrito-contador {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: orange;
+  color: black;
+  width: 25px;
+  height: 25px;
+  top: -12px;
+  right: -8px;
+  border-radius: 50%;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
 /*End Estilos NavBar*/
 /*Start Estilos Carousel*/
 #carouselExampleIndicators {
@@ -124,11 +155,11 @@ nav ul li a:hover::after {
 }
 
 .contenedor__gris__inicio__caja__texto__title {
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 .contenedor__gris__inicio__caja__texto__paragraph {
-  font-size: 2rem;
+  font-size: 1.75rem;
   margin-top: 10px;
   margin-bottom: 20px;
 }
@@ -137,7 +168,7 @@ nav ul li a:hover::after {
   background-color: #201f1f;
   color: white;
   border: 2px solid #201f1f;
-  padding: 15px 32px;
+  padding: 10px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -174,7 +205,7 @@ nav ul li a:hover::after {
   height: -moz-fit-content;
   height: fit-content;
   border-radius: 20px;
-  width: 95%;
+  width: 70%;
 }
 
 .section__2__inicio__contenedor {
@@ -221,7 +252,7 @@ nav ul li a:hover::after {
   background-color: #201f1f;
   color: white;
   border: 2px solid #201f1f;
-  padding: 15px 32px;
+  padding: 10px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -230,7 +261,7 @@ nav ul li a:hover::after {
   border-radius: 8px;
   -webkit-transition-duration: 0.4s;
           transition-duration: 0.4s;
-  margin-top: 15px;
+  margin-top: 30px;
   margin-bottom: 15px;
 }
 
@@ -244,6 +275,7 @@ nav ul li a:hover::after {
 .section__2__inicio__contenedor__cards .card {
   margin-right: 30px;
   margin-left: 30px;
+  width: 20%;
 }
 
 .animate-charcter {
@@ -329,11 +361,11 @@ nav ul li a:hover::after {
 }
 
 .contenedor__gris__nosotros__caja__texto__title {
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 .contenedor__gris__nosotros__caja__texto__paragraph {
-  font-size: 2rem;
+  font-size: 1.75rem;
   margin-top: 10px;
   margin-bottom: 20px;
 }
@@ -356,22 +388,224 @@ nav ul li a:hover::after {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  width: 95%;
+  width: 85%;
 }
 
 /* End Estilos Nosotros */
 /* Start Estilos Productos */
-.productos__card__container {
-  margin: 0 auto;
+/* Start Estilos Cards */
+.productos-card-container {
   display: -ms-grid;
   display: grid;
   grid-gap: 1rem;
   margin-bottom: 35px;
 }
 
-.productos__card__container .card {
+.productos-card-container .card {
+  width: 80%;
   margin-left: 25px;
   margin-right: 20px;
+  margin-bottom: 35px;
+}
+
+.card-contenedor-imagen {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-imagen {
+  display: block;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.card-contenedor-imagen:hover .card-imagen {
+  opacity: 0.5;
+}
+
+.carrito-btn2 {
+  position: absolute;
+  top: 75%;
+  right: 0;
+  padding: 0.5rem 0.75rem;
+  letter-spacing: 0.1rem;
+  background: orange;
+  border: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  -webkit-transform: translateX(101%);
+          transform: translateX(101%);
+}
+
+@media screen and (min-width: 1065px) and (max-width: 1174px) {
+  .carrito-btn2 {
+    top: 75%;
+    letter-spacing: 0;
+    padding: 0.3rem 0.5rem;
+  }
+}
+
+@media screen and (min-width: 1175px) and (max-width: 1315px) {
+  .carrito-btn2 {
+    letter-spacing: 0;
+  }
+}
+
+.carrito-btn2:hover {
+  color: white;
+}
+
+.card-contenedor-imagen:hover .carrito-btn2 {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.fa-solid {
+  margin-right: 0.5rem;
+}
+
+.card-precio {
+  color: crimson;
+  font-size: 1.5rem;
+}
+
+/* End Estilos Cards */
+/* Start Estilos Carrito */
+.carrito-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  background: rgba(110, 94, 78, 0.5);
+  z-index: 2;
+  visibility: hidden;
+}
+
+.carrito-principal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin-top: 60px;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  z-index: 3;
+  background: white;
+  padding: 1.5rem;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+.carrito-mostrar {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.carrito-magia {
+  visibility: visible;
+}
+
+@media screen and (min-width: 768px) {
+  .carrito-principal {
+    width: 30vw;
+    min-width: 450px;
+  }
+}
+
+.carrito-cerrar {
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+.carrito-titulo {
+  text-transform: capitalize;
+  text-align: center;
+  letter-spacing: 0.1rem;
+  margin-bottom: 2rem;
+}
+
+/* Start Estilos Producto de Muestra del Carrito */
+.carrito-producto {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-columns: auto 1fr auto;
+      grid-template-columns: auto 1fr auto;
+  grid-column-gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.carrito-producto-imagen {
+  width: 100px;
+  height: 100px;
+}
+
+.carrito-producto-nombre {
+  font-size: 1.3rem;
+  text-transform: capitalize;
+  letter-spacing: 0.1rem;
+}
+
+.carrito-producto-precio {
+  margin: 0.5rem 0;
+  letter-spacing: 0.1rem;
+}
+
+.carrito-producto-borrar {
+  color: crimson;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.carrito-producto-cantidad {
+  text-align: center;
+  margin-bottom: -3px;
+}
+
+.fa-chevron-up,
+.fa-chevron-down {
+  color: #f09d51;
+  cursor: pointer;
+}
+
+/* End Estilos Producto de Muestra del Carrito */
+.carrito-pie {
+  margin-top: 2rem;
+  letter-spacing: 0.1rem;
+  text-align: center;
+}
+
+.carrito-pie h3 {
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+}
+
+.banner-btn {
+  padding: 1rem 3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-size: 1rem;
+  background: #f09d51;
+  color: #222;
+  border: 1px solid #f09d51;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+
+.banner-btn:hover {
+  background: transparent;
+  color: #222;
 }
 
 /* End Estilos Productos */
@@ -394,7 +628,8 @@ nav ul li a:hover::after {
 .servicios__card__container__1__card, .servicios__card__container__2__card {
   margin-right: 30px;
   margin-left: 30px;
-  width: 37%;
+  margin-bottom: 50px;
+  width: 30%;
 }
 
 .servicios__card__container__1__card__title, .servicios__card__container__2__card__title {
@@ -473,7 +708,7 @@ nav ul li a:hover::after {
     font-size: 1.1rem;
   }
   .contenedor__gris__inicio__caja__imagen img, .contenedor__gris__contacto__caja__imagen img {
-    width: 75%;
+    width: 55%;
     height: auto;
   }
   .section__2__inicio__contenedor__cards {
@@ -486,10 +721,11 @@ nav ul li a:hover::after {
             align-items: center;
   }
   .section__2__inicio__contenedor__cards .card {
-    margin-bottom: 30px;
-    width: 65%;
+    margin-bottom: 50px;
+    width: 35%;
   }
   .section__2__inicio__contenedor__button__btn {
+    margin-top: -55px;
     padding: 04px 15px;
     font-size: 1.1rem;
   }
@@ -509,7 +745,7 @@ nav ul li a:hover::after {
   }
   .nosotros__card__container .card {
     margin-bottom: 50px;
-    width: 80%;
+    width: 55%;
     font-size: 1.25rem;
   }
   .contenedor__gris__nosotros__caja {
@@ -531,7 +767,7 @@ nav ul li a:hover::after {
     font-size: 1.25rem;
   }
   .contenedor__gris__nosotros__caja__imagen img {
-    width: 95%;
+    width: 65%;
     height: auto;
   }
   /* End Nosotros */
@@ -550,7 +786,7 @@ nav ul li a:hover::after {
   }
   .servicios__card__container__1__card, .servicios__card__container__2__card {
     margin-bottom: 50px;
-    width: 80%;
+    width: 60%;
   }
   .servicios__card__container__1__card__title, .servicios__card__container__2__card__title {
     font-size: 1.5rem;
@@ -578,18 +814,18 @@ nav ul li a:hover::after {
     margin-top: 15px;
   }
   .contenedor__gris__inicio__caja__texto__title {
-    font-size: 1.75rem;
+    font-size: 1.65rem;
     margin-top: 15px;
   }
   .contenedor__gris__inicio__caja__texto__paragraph {
-    font-size: 1.3rem;
+    font-size: 1.35rem;
   }
   .contenedor__gris__inicio__caja__texto__button {
     padding: 06px 19px;
     font-size: 1.15rem;
   }
   .contenedor__gris__inicio__caja__imagen img, .contenedor__gris__contacto__caja__imagen img {
-    width: 70%;
+    width: 55%;
     height: auto;
   }
   .section__2__inicio__contenedor__cards {
@@ -603,9 +839,10 @@ nav ul li a:hover::after {
   }
   .section__2__inicio__contenedor__cards .card {
     margin-bottom: 30px;
-    width: 60%;
+    width: 35%;
   }
   .section__2__inicio__contenedor__button__btn {
+    margin-top: -5px;
     padding: 06px 19px;
     font-size: 1.15rem;
   }
@@ -625,7 +862,7 @@ nav ul li a:hover::after {
   }
   .nosotros__card__container .card {
     margin-bottom: 50px;
-    width: 80%;
+    width: 55%;
   }
   .contenedor__gris__nosotros__caja {
     display: -webkit-box;
@@ -646,7 +883,7 @@ nav ul li a:hover::after {
     font-size: 1.35rem;
   }
   .contenedor__gris__nosotros__caja__imagen img {
-    width: 90%;
+    width: 65%;
     height: auto;
   }
   /* End Nosotros */
@@ -665,7 +902,7 @@ nav ul li a:hover::after {
   }
   .servicios__card__container__1__card, .servicios__card__container__2__card {
     margin-bottom: 50px;
-    width: 80%;
+    width: 55%;
   }
   .servicios__card__container__1__card__title, .servicios__card__container__2__card__title {
     font-size: 1.5rem;
@@ -693,18 +930,18 @@ nav ul li a:hover::after {
     margin-top: 15px;
   }
   .contenedor__gris__inicio__caja__texto__title {
-    font-size: 2rem;
+    font-size: 1.75rem;
     margin-top: 15px;
   }
   .contenedor__gris__inicio__caja__texto__paragraph {
-    font-size: 1.5rem;
+    font-size: 1.45rem;
   }
   .contenedor__gris__inicio__caja__texto__button {
     padding: 08px 23px;
     font-size: 1.2rem;
   }
   .contenedor__gris__inicio__caja__imagen img, .contenedor__gris__contacto__caja__imagen img {
-    width: 65%;
+    width: 50%;
     height: auto;
   }
   .section__2__inicio__contenedor__cards {
@@ -717,10 +954,11 @@ nav ul li a:hover::after {
             align-items: center;
   }
   .section__2__inicio__contenedor__cards .card {
-    margin-bottom: 30px;
-    width: 60%;
+    margin-bottom: 50px;
+    width: 35%;
   }
   .section__2__inicio__contenedor__button__btn {
+    margin-top: -15px;
     padding: 08px 23px;
     font-size: 1.2rem;
   }
@@ -737,7 +975,7 @@ nav ul li a:hover::after {
   }
   .nosotros__card__container .card {
     margin-bottom: 50px;
-    width: 75%;
+    width: 55%;
   }
   .contenedor__gris__nosotros__caja {
     display: -webkit-box;
@@ -752,13 +990,13 @@ nav ul li a:hover::after {
     margin-top: 15px;
   }
   .contenedor__gris__nosotros__caja__texto__title {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
   .contenedor__gris__nosotros__caja__texto__paragraph {
-    font-size: 1.5rem;
+    font-size: 1.45rem;
   }
   .contenedor__gris__nosotros__caja__imagen img {
-    width: 90%;
+    width: 65%;
     height: auto;
   }
   /* End Nosotros */
@@ -777,7 +1015,7 @@ nav ul li a:hover::after {
   }
   .servicios__card__container__1__card, .servicios__card__container__2__card {
     margin-bottom: 50px;
-    width: 75%;
+    width: 50%;
   }
   .servicios__card__container__1__card__title, .servicios__card__container__2__card__title {
     font-size: 1.65rem;
@@ -816,7 +1054,7 @@ nav ul li a:hover::after {
     font-size: 1.25rem;
   }
   .contenedor__gris__inicio__caja__imagen img, .contenedor__gris__contacto__caja__imagen img {
-    width: 60%;
+    width: 50%;
     height: auto;
   }
   .section__2__inicio__contenedor__cards {
@@ -829,10 +1067,11 @@ nav ul li a:hover::after {
             align-items: center;
   }
   .section__2__inicio__contenedor__cards .card {
-    margin-bottom: 30px;
-    width: 55%;
+    margin-bottom: 50px;
+    width: 35%;
   }
   .section__2__inicio__contenedor__button__btn {
+    margin-top: -15px;
     padding: 10px 27px;
     font-size: 1.25rem;
   }
@@ -849,7 +1088,7 @@ nav ul li a:hover::after {
   }
   .nosotros__card__container .card {
     margin-bottom: 50px;
-    width: 75%;
+    width: 55%;
   }
   .nosotros__card__container__texto {
     font-size: 1.65rem;
@@ -867,14 +1106,14 @@ nav ul li a:hover::after {
     margin-top: 15px;
   }
   .contenedor__gris__nosotros__caja__texto__title {
-    font-size: 2.25rem;
+    font-size: 2rem;
     margin-top: 15px;
   }
   .contenedor__gris__nosotros__caja__texto__paragraph {
-    font-size: 1.65rem;
+    font-size: 1.55rem;
   }
   .contenedor__gris__nosotros__caja__imagen img {
-    width: 75%;
+    width: 65%;
     height: auto;
   }
   /* End Nosotros */
@@ -891,7 +1130,7 @@ nav ul li a:hover::after {
             align-items: stretch;
   }
   .servicios__card__container__1__card, .servicios__card__container__2__card {
-    width: 75%;
+    width: 40%;
   }
   .servicios__card__container__1__card__title, .servicios__card__container__2__card__title {
     font-size: 1.75rem;
@@ -910,10 +1149,10 @@ nav ul li a:hover::after {
     margin-top: 15px;
   }
   .contenedor__gris__inicio__caja__texto__title {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
   }
   .contenedor__gris__inicio__caja__texto__paragraph {
-    font-size: 1.7rem;
+    font-size: 1.65rem;
   }
   .contenedor__gris__inicio__caja__texto__button {
     padding: 10px 27px;
@@ -921,6 +1160,9 @@ nav ul li a:hover::after {
   .contenedor__gris__inicio__caja__imagen img, .contenedor__gris__contacto__caja__imagen img {
     width: 90%;
     height: auto;
+  }
+  .section__2__inicio__contenedor__cards .card {
+    margin-top: -10px;
   }
   /* End Inicio */
   /* Start Nosotros */
@@ -937,13 +1179,13 @@ nav ul li a:hover::after {
     margin-top: 15px;
   }
   .contenedor__gris__nosotros__caja__texto__title {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
   }
   .contenedor__gris__nosotros__caja__texto__paragraph {
-    font-size: 1.7rem;
+    font-size: 1.65rem;
   }
   .contenedor__gris__nosotros__caja__imagen img {
-    width: 80%;
+    width: 60%;
     height: auto;
   }
   /* End Nosotros */
@@ -952,7 +1194,7 @@ nav ul li a:hover::after {
 /* End Extra Large Devices */
 /* Start Medias Productos */
 @media screen and (max-width: 576px) {
-  .productos__card__container {
+  .productos-card-container {
     -ms-grid-columns: (1fr)[1];
         grid-template-columns: repeat(1, 1fr);
     width: 100%;
@@ -965,35 +1207,51 @@ nav ul li a:hover::after {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
-  .productos__card__container__card {
-    width: 70%;
+  .productos-card-container .card {
+    width: 55%;
   }
 }
 
 @media screen and (min-width: 576px) and (max-width: 768px) {
-  .productos__card__container {
+  .productos-card-container {
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 992px) {
-  .productos__card__container {
+  .productos-card-container {
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
     width: 100%;
   }
+  .productos-card-container .card {
+    width: 75%;
+  }
 }
 
-@media screen and (min-width: 992px) and (max-width: 1200px) {
-  .productos__card__container {
+@media screen and (min-width: 992px) and (max-width: 1065px) {
+  .productos-card-container {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+  .productos-card-container .card {
+    width: 75%;
+  }
+}
+
+@media screen and (min-width: 1065px) and (max-width: 1200px) {
+  .productos-card-container {
     -ms-grid-columns: (1fr)[4];
         grid-template-columns: repeat(4, 1fr);
+  }
+  .productos-card-container .card {
+    width: 85%;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .productos__card__container {
+  .productos-card-container {
     -ms-grid-columns: (1fr)[4];
         grid-template-columns: repeat(4, 1fr);
   }
