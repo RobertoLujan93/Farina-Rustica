@@ -465,7 +465,7 @@ nav ul li a {
 
 .fa-chevron-up,
 .fa-chevron-down {
-  color: #f09d51;
+  color: orange;
   cursor: pointer;
 }
 /* End Estilos Producto de Muestra del Carrito */
@@ -486,9 +486,9 @@ nav ul li a {
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   font-size: 1rem;
-  background: #f09d51;
+  background: orange;
   color: #222;
-  border: 1px solid #f09d51;
+  border: 1px solid orange;
   transition: all 0.3s linear;
   cursor: pointer;
 }
@@ -597,7 +597,7 @@ nav ul li a {
   }
   .section__2__inicio__contenedor__cards .card {
     margin-bottom: 50px;
-    width: 35%;
+    width: 80%;
   }
   .section__2__inicio__contenedor__button__btn {
     margin-top: -55px;
@@ -687,7 +687,7 @@ nav ul li a {
   }
   .section__2__inicio__contenedor__cards .card {
     margin-bottom: 30px;
-    width: 35%;
+    width: 70%;
   }
   .section__2__inicio__contenedor__button__btn {
     margin-top: -5px;
@@ -777,7 +777,7 @@ nav ul li a {
   }
   .section__2__inicio__contenedor__cards .card {
     margin-bottom: 50px;
-    width: 35%;
+    width: 70%;
   }
   .section__2__inicio__contenedor__button__btn {
     margin-top: -15px;
@@ -863,7 +863,7 @@ nav ul li a {
   }
   .section__2__inicio__contenedor__cards .card {
     margin-bottom: 50px;
-    width: 35%;
+    width: 65%;
   }
   .section__2__inicio__contenedor__button__btn {
     margin-top: -15px;
@@ -976,7 +976,7 @@ nav ul li a {
     flex-wrap: wrap;
   }
   .productos-card-container .card {
-    width: 55%;
+    width: 70%;
   }
 }
 

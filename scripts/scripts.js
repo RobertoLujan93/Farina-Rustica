@@ -17,6 +17,8 @@ let botonesDOM = []
 document.addEventListener ("DOMContentLoaded", () => {
     const productos = new Productos ()
     const desplegar = new Desplegar ()
+    // Cargar el carrito con toda su información
+    desplegar.utilidadesCarrito ()
     // Activar los productos desde el JSON
     productos.activarProductos ().then (productos => {
     desplegar.desplegarProductos (productos)
@@ -25,6 +27,7 @@ document.addEventListener ("DOMContentLoaded", () => {
     }) .then(() => {
         // Activar botones para agregar productos al carrito
         desplegar.activarBotonesComprar ()
+        desplegar.herramientasCarrito ()
     })
 })
 
@@ -36,16 +39,7 @@ class Productos {
         try {
         let contenido = await fetch ("../farina-rustica-productos.json")
         let resultado = await contenido.json ()
-        let productos = resultado.panes
-        // Después de cierto punto se rompió el código así que tuve que hacer un map para que regresara un nuevo array y todo volviera a la normalidad
-        productos = productos.map (item => {
-            const nombre = item.nombre
-            const precio = item.precio
-            const id = item.id
-            const imagen =item.imgSrc
-            return {nombre,precio,id,imagen}
-        })
-        return productos;
+        return resultado;
         } catch (error) {
             console.log (error);
         }
@@ -62,9 +56,9 @@ class Desplegar {
                 <div class="card">
                     <div class="card-contenedor-imagen">
                         <img
-                            src=${producto.imagen}
+                            src=${producto.imgSrc}
                             class="card-img-top card-imagen"
-                            alt="Imagen de Conchita"
+                            alt="Imagen de producto"
                             />
                         <button class="carrito-btn2" data-id=${producto.id}>
                             <i class="fa-solid fa-cart-shopping"> </i>
@@ -130,7 +124,7 @@ class Desplegar {
         div.classList.add ("carrito-producto")
         div.innerHTML = `
         <img
-            src="${item.imagen}"
+            src="${item.imgSrc}"
             class="carrito-producto-imagen"
             alt="Producto del Carrito"
             />
@@ -142,7 +136,7 @@ class Desplegar {
                 <strong>$${item.precio}</strong>
                 </h5>
                 <span class="carrito-producto-borrar" data-id=${item.id}
-                ><strong>Borrar</strong></span
+                >Borrar</span
                 >
             </div>
             <div>
@@ -161,6 +155,83 @@ class Desplegar {
         carritoDOM.classList.add ("carrito-mostrar")
         carritoOverlay.classList.add ("carrito-magia")
     }
+    // Cargar el carrito con toda su información
+    utilidadesCarrito () {
+        carrito = Storage.cargarCarrito ()
+        this.infoCarrito (carrito)
+        this.llenarCarrito (carrito)
+        // Abrir y cerrar el carrito
+        carritoBtn.addEventListener ("click", this.mostrarCarrito)
+        carritoCerrar.addEventListener ("click", this.cerrarCarrito)
+    }
+    llenarCarrito (carrito) {
+        carrito.forEach (item => this.agregarItemCarrito (item))
+    }
+    cerrarCarrito () {
+        carritoDOM.classList.remove ("carrito-mostrar")
+        carritoOverlay.classList.remove ("carrito-magia")
+    }
+    // Activar los botones adentro del carrito
+    herramientasCarrito () {
+        carritoVaciar.addEventListener ("click", () => {
+            this.vaciarCarrito ()
+        })
+        carritoContenido.addEventListener ("click", e => {
+            // Borrar producto del carrito y del DOM
+            if (e.target.classList.contains ("carrito-producto-borrar")) {
+                let borrarProducto = e.target
+                let id = borrarProducto.dataset.id
+                carritoContenido.removeChild (borrarProducto.parentElement.parentElement)
+                this.borrarItem (id)
+                // Agregar cantidad a los productos
+            } else if (e.target.classList.contains ("fa-chevron-up")) {
+                let agregarCantidad = e.target
+                let id = agregarCantidad.dataset.id
+                let sumarItem = carrito.find (item => item.id === id)
+                sumarItem.cantidad = sumarItem.cantidad +1
+                Storage.guardarCarrito (carrito)
+                this.infoCarrito (carrito)
+                agregarCantidad.nextElementSibling.innerText = sumarItem.cantidad
+                // Restar cantidad a los productos
+            } else if (e.target.classList.contains ("fa-chevron-down")) {
+                let restarCantidad = e.target
+                let id = restarCantidad.dataset.id
+                let restarItem = carrito.find (item => item.id === id)
+                restarItem.cantidad = restarItem.cantidad -1
+                // Evitar que la cantidad y el total bajen a número negativos
+                if (restarItem.cantidad >0) {
+                    Storage.guardarCarrito (carrito)
+                    this.infoCarrito (carrito)
+                    restarCantidad.previousElementSibling.innerText = restarItem.cantidad
+                } else {
+                    carritoContenido.removeChild (restarCantidad.parentElement.parentElement)
+                    this.borrarItem (id)
+                }
+            }
+        })
+    }
+    // Vaciar el carrito
+    vaciarCarrito () {
+        let itemsCarrito = carrito.map (item => item.id)
+        itemsCarrito.forEach (id => this.borrarItem (id))
+        while (carritoContenido.children.length >0) {
+            carritoContenido.removeChild (carritoContenido.children [0])
+        }
+        this.cerrarCarrito ()
+    }
+    // Proceso para borrar los items dentro del carrito y que los cambios se guarden en local storage
+    borrarItem (id) {
+        carrito = carrito.filter (item => item.id !==id)
+        this.infoCarrito (carrito)
+        Storage.guardarCarrito (carrito)
+        // Regresar el botón a la normalidad después de borrar
+        let botoncarrito = this.encontrarBoton (id)
+        botoncarrito.disabled = false
+        botoncarrito.innerHTML = `<i class="fa-solid fa-cart-shopping"> </i> Agregar al carrito`
+    }
+    encontrarBoton (id) {
+        return botonesDOM.find (botoncarrito => botoncarrito.dataset.id === id)
+    }
 }
 
 // Crear clase "Storage" encargada del almacenamiento en Local Storage
@@ -176,6 +247,10 @@ class Storage {
     // Guardar el carrito en local storage
     static guardarCarrito (carrito) {
         localStorage.setItem ("carrito", JSON.stringify (carrito))
+    }
+    // Cargar carrito desde local storage
+    static cargarCarrito () {
+        return localStorage.getItem ("carrito") ? JSON.parse (localStorage.getItem ("carrito")): []
     }
 }
 
