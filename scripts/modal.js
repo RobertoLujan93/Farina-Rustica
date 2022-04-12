@@ -44,8 +44,8 @@ const mandarAlerta = (nombre) => {
     modal.style.display = "none"
     carritoOverlay.classList.remove("carrito-magia")
     Swal.fire({
-        title: 'Felicidades!',
-        text: `Gracias por comprar en Farina Rústica ${nombre} !`,
+        title: 'Felicidades por tu compra !',
+        text: `${nombre}, te agradecemos por tu compra en Farina Rústica ! Te enviaremos un e-mail con los detalles de tu compra, vuelve a visitarnos pronto !`,
         imageUrl: "../imagenes/imagen-carousel-1.jpg",
         imageWidth: 400,
         imageHeight: 200,
