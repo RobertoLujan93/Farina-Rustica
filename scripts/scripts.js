@@ -93,7 +93,7 @@ class Desplegar {
                     e.target.innerText = "El producto ya está en el carrito"
                     e.target.disabled = true
                     iziToast.success({
-                        title: 'Exito!',
+                        title: '',
                         message: 'Tu producto ha sido agregado al carrito!',
                     })
                     // Hacer que el boton "agregar al carrito" añada el item con sus características mediante el id
