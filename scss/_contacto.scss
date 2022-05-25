@@ -1,0 +1,31 @@
+/* Start Estilos Contacto */
+.contenedor__gris__contacto {
+  @extend .contenedor__gris__inicio;
+  display: flex;
+  align-items: center;
+  position: relative;
+  min-height: 80vh;
+  &__caja {
+    @extend .contenedor__gris__inicio__caja;
+    &__title {
+      @include flex-space;
+      padding: 30px;
+      margin-top: -40px;
+    }
+    &__imagen {
+      @extend .contenedor__gris__inicio__caja__imagen;
+      & img {
+        height: fit-content;
+        width: 95%;
+      }
+    }
+  }
+}
+
+.contacto__footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+/*End Estilos Contacto */

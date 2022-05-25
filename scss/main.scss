@@ -1,0 +1,60 @@
+/* Start Variables */
+$colores-caja: (
+  "negro": #201f1f,
+  "gris": #eeeeee,
+);
+
+@mixin contenedor-gris {
+  background-color: map-get($colores-caja, gris);
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+
+@mixin flex-space {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* End Variables */
+
+/*  Start Estilos Iniciales */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+}
+
+main {
+  margin-top: 110px;
+}
+
+.container-bg {
+  @include contenedor-gris;
+}
+
+.col {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.card-body {
+  background-color: map-get($colores-caja, gris);
+}
+/* End Estilos Iniciales */
+
+@import 'contacto';
+@import 'estilos';
+@import 'inicio';
+@import 'nosotros';
+@import 'productos';
+@import 'servicios';
+
